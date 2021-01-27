@@ -1,1 +1,1 @@
-# DCCRN-with-various-loss-functions
+# DCCRN with various loss functions
