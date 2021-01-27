@@ -1,3 +1,3 @@
 # DCCRN with various loss functions
 
-<img src="C:/Users/MSPT/Desktop/논문/DCCRN_수정최종.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+![DCCRN_수정최종](https://user-images.githubusercontent.com/55497506/105969652-d39f6b80-60cb-11eb-805c-0f204405ef37.png)
