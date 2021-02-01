@@ -1,3 +1,11 @@
+---
+layout: post
+title: "[알고리즘] Bubble sort : 버블 소트"
+tags: [알고리즘,정렬]
+use_math : true
+comments: true
+---
+
 # DCCRN with various loss functions
 
 DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed [1]. This repository is an application of DCCRN with various loss functions. Our original paper can be found here, and you can check the test samples here.   
