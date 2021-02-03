@@ -12,13 +12,17 @@ DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural n
 # Loss functions
 We use two base loss functions and two perceptual loss functions.
 1. MSE: Mean Squred Error
-    
-
+![image](https://user-images.githubusercontent.com/55497506/106714015-97758900-663e-11eb-9593-6ecfd4266a41.png)
+<br>
 
 2. SI-SNR: Scale Invariant Source-to-Noise Ratio
+<br>
 
 1. LMS: Log Mel Spectra
+<br>
+
 2. PMSQE: Perceptual Metric for Speech Quality Evaluation
+<br>
 
 # Prepare training data
 
