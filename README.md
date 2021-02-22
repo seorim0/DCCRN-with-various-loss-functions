@@ -1,6 +1,6 @@
 # DCCRN with various loss functions
 
-DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed at [1]. This repository is an application using DCCRN with various loss functions. Our original paper can be found here, and you can check the test samples here.   
+DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed at [1](https://arxiv.org/abs/2008.00264). This repository is an application using DCCRN with various loss functions. Our original paper can be found here, and you can check the test samples here.   
 <br>   
    
 ![DCCRN_수정최종](https://user-images.githubusercontent.com/55497506/105969652-d39f6b80-60cb-11eb-805c-0f204405ef37.png)
@@ -27,8 +27,21 @@ We use two base loss functions and two perceptual loss functions.
 ![image](https://user-images.githubusercontent.com/55497506/106714147-c855be00-663e-11eb-8a8d-a9d5aba1325d.png)
 <br>
 
+
+# Requirements
+This repository is tested on Ubuntu 20.04.
+* Python 3.7+
+* Cuda 10.0+
+* CuDNN 7+
+* Pytorch 
+
 # Prepare training data
+
 
 # Use pretrained models
 
+# References
+* DCCRN(https://arxiv.org/abs/2008.00264)
+
 # Paper
+Performance comparison evaluation of speech enhancement using various loss function.
