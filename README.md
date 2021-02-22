@@ -41,7 +41,7 @@ This repository is tested on Ubuntu 20.04.
 # Use pretrained models
 
 # References
-* [DCCRN](https://arxiv.org/abs/2008.00264)
+* [DCCRN](https://github.com/huyanxin/DeepComplexCRN)
 
 # Paper
 Performance comparison evaluation of speech enhancement using various loss function.
