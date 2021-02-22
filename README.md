@@ -38,7 +38,8 @@ We use two base loss functions and two perceptual loss functions.
 * CuDNN 7+
 * Pytorch 1.7+
 <br>
-> We use [Asteroid]() to calculate PMSQE loss function. If you want to train with PMSQE loss, then you have to install Asteroid.
+
+> We use [Asteroid]() to calculate PMSQE loss function. If you want to train with PMSQE loss, then you have to install Asteroid.   
 ```pip install asteroid```
 
 # Prepare data
