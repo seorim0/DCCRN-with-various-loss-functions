@@ -39,18 +39,23 @@ We use two base loss functions and two perceptual loss functions.
 * Pytorch 1.7+
 <br>
 
-> We use [Asteroid]() to calculate PMSQE loss function. If you want to train with PMSQE loss, then you have to install Asteroid.   
-```pip install asteroid```
+> Library
+* 
 
 # Prepare data
 The training data consists of the following three dimensions.   
 ```[Batch size, 2(input & target), wav length]``` 
 <br>
-We trained with 3 seconds of wav files and the sampling frequency is 16k.
+The test data consists of the following dimensions.
+```[2(noise type: seen, unseen), dB classes, Batch size, 2(input & target), wav length]```
+
+<br>
+We cut the wav files longer than 3 seconds into 3 seconds and zero padded for wav files shorter than 3 seconds.   
+The sampling frequency is 16k.
 
 # Use pretrained models
 If you want to test the model described in the [paper](), you can change chkpt_model path in ```config.py```   
-We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS and SI-SNR + PMSQE.
+We have uploaded 3 models trained with each loss function, SDR, SDR + LMS and SDR + PMSQE. The reason we choose the 3 models is, SDR is not in the [paper]() but shows the most obvious difference with basic loss function and basic loss + perceptual loss.
 
 # Results
 
