@@ -11,21 +11,24 @@ DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural n
 
 # Loss functions
 We use two base loss functions and two perceptual loss functions.
-1. MSE: Mean Squred Error   
-![image](https://user-images.githubusercontent.com/55497506/106714015-97758900-663e-11eb-9593-6ecfd4266a41.png)
-<br>
 
-2. SI-SNR: Scale Invariant Source-to-Noise Ratio   
-![image](https://user-images.githubusercontent.com/55497506/106714206-da376100-663e-11eb-94c6-77f6588616b9.png)
-<br>
+> Base
+  1. MSE: Mean Squred Error   
+  ![image](https://user-images.githubusercontent.com/55497506/106714015-97758900-663e-11eb-9593-6ecfd4266a41.png)
+  <br>
 
-1. LMS: Log Mel Spectra   
-![image](https://user-images.githubusercontent.com/55497506/106714238-e58a8c80-663e-11eb-8601-58bb020a2d3b.png)
-<br>
+  2. SI-SNR: Scale Invariant Source-to-Noise Ratio   
+  ![image](https://user-images.githubusercontent.com/55497506/106714206-da376100-663e-11eb-94c6-77f6588616b9.png)
+  <br>
 
-2. PMSQE: Perceptual Metric for Speech Quality Evaluation   
-![image](https://user-images.githubusercontent.com/55497506/106714147-c855be00-663e-11eb-8a8d-a9d5aba1325d.png)
-<br>
+> Perceptual
+  1. LMS: Log Mel Spectra   
+  ![image](https://user-images.githubusercontent.com/55497506/106714238-e58a8c80-663e-11eb-8601-58bb020a2d3b.png)
+  <br>
+
+  2. PMSQE: Perceptual Metric for Speech Quality Evaluation   
+  ![image](https://user-images.githubusercontent.com/55497506/106714147-c855be00-663e-11eb-8a8d-a9d5aba1325d.png)
+  <br>
 
 
 # Requirements
@@ -36,7 +39,9 @@ This repository is tested on Ubuntu 20.04.
 * Pytorch 
 
 # Prepare training data
-
+The data consists of the following three dimensions.   
+[Batch size, 2(input & target), wav length]   
+We use 3 seconds of wav files and the sampling frequency is 16k.
 
 # Use pretrained models
 
