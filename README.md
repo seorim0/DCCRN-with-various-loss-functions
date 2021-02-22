@@ -4,7 +4,7 @@ DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural n
 <br>   
    
 ![DCCRN_수정최종](https://user-images.githubusercontent.com/55497506/105969652-d39f6b80-60cb-11eb-805c-0f204405ef37.png)
-> Source of the figure: (논문)   
+> Source of the figure: [Performance comparison evaluation of speech enhancement using various loss function.]()   
 <br>
 
 
