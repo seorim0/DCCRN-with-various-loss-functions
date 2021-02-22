@@ -40,7 +40,7 @@ This repository is tested on Ubuntu 20.04.
 
 # Prepare training data
 The data consists of the following three dimensions.   
-'''[Batch size, 2(input & target), wav length]'''   
+```[Batch size, 2(input & target), wav length]```   
 We use 3 seconds of wav files and the sampling frequency is 16k.
 
 # Use pretrained models
