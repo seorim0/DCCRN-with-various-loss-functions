@@ -32,11 +32,14 @@ We use two base loss functions and two perceptual loss functions.
 
 
 # Requirements
-This repository is tested on Ubuntu 20.04.
+> This repository is tested on Ubuntu 20.04.
 * Python 3.7+
 * Cuda 10.0+
 * CuDNN 7+
 * Pytorch 1.7+
+<br>
+> We use [Asteroid]() to calculate PMSQE loss function. If you want to train with PMSQE loss, then you have to install Asteroid.
+```pip install asteroid```
 
 # Prepare data
 The training data consists of the following three dimensions.   
@@ -55,6 +58,7 @@ We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS 
 **DCCRN: Deep Complex Convolution Recurrent Network for Phase-Aware Speech Enhancement**   
 Yanxin Hu, Yun Liu, Shubo Lv, Mengtao Xing, Shimin Zhang, Yihui Fu, Jian Wu, Bihong Zhang, Lei Xie   
 [[arXiv]](https://arxiv.org/abs/2008.00264)  [[code]](https://github.com/huyanxin/DeepComplexCRN)
+
 
 # Paper
 [Performance comparison evaluation of speech enhancement using various loss function.]()
