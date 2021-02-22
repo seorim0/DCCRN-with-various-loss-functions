@@ -59,7 +59,9 @@ If you want to test the model described in the [paper](), you can change chkpt_m
 We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS and SI-SNR + PMSQE.   
 
 # Results
-
+![image](https://user-images.githubusercontent.com/55497506/108705017-1a0fab00-7550-11eb-962a-9f0b218371a8.png)
+> Source of the figure: [Performance comparison evaluation of speech enhancement using various loss function.]()   
+> The spectrograms of  (a) clean speech, (b) noisy speech at 0 dB SNR, estimated speeches using (c)  MSE and PMSQE, (d)  SI-SNR , (e) SI-SNR and PMSQE, (f)  SI-SNR and LMS.
 
 # References
 **DCCRN: Deep Complex Convolution Recurrent Network for Phase-Aware Speech Enhancement**   
