@@ -36,17 +36,25 @@ This repository is tested on Ubuntu 20.04.
 * Python 3.7+
 * Cuda 10.0+
 * CuDNN 7+
-* Pytorch 
+* Pytorch 1.7+
 
-# Prepare training data
-The data consists of the following three dimensions.   
-```[Batch size, 2(input & target), wav length]```   
-We use 3 seconds of wav files and the sampling frequency is 16k.
+# Prepare data
+The training data consists of the following three dimensions.   
+```[Batch size, 2(input & target), wav length]``` 
+<br>
+We trained with 3 seconds of wav files and the sampling frequency is 16k.
 
 # Use pretrained models
+If you want to test the model described in the [paper](), you can change chkpt_model path in ```config.py```
+We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS and SI-SNR + PMSQE.
+
+# Results
+
 
 # References
-* [DCCRN](https://github.com/huyanxin/DeepComplexCRN)
+**DCCRN: Deep Complex Convolution Recurrent Network for Phase-Aware Speech Enhancement** 
+Yanxin Hu, Yun Liu, Shubo Lv, Mengtao Xing, Shimin Zhang, Yihui Fu, Jian Wu, Bihong Zhang, Lei Xie
+[[arXiv]](https://arxiv.org/abs/2008.00264)  [[code]](https://github.com/huyanxin/DeepComplexCRN)
 
 # Paper
-Performance comparison evaluation of speech enhancement using various loss function.
+[Performance comparison evaluation of speech enhancement using various loss function.]()
