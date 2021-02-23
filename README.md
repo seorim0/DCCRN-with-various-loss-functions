@@ -79,7 +79,7 @@ We evaluate the outputs with PESQ(Perceptual Evaluation of Speech Quality) and S
 ![image](https://user-images.githubusercontent.com/55497506/108705017-1a0fab00-7550-11eb-962a-9f0b218371a8.png)   
 > Source of the figure: [paper]()   
 
-> The spectrograms of  (a) clean speech, (b) noisy speech at 0 dB SNR, estimated speeches using (c)  MSE and PMSQE, (d)  SI-SNR , (e) SI-SNR and PMSQE, (f)  SI-SNR and LMS.
+The spectrograms of  (a) clean speech, (b) noisy speech at 0 dB SNR, estimated speeches using (c)  MSE and PMSQE, (d)  SI-SNR , (e) SI-SNR and PMSQE, (f)  SI-SNR and LMS. 
 
 # References
 **DCCRN: Deep Complex Convolution Recurrent Network for Phase-Aware Speech Enhancement**   
@@ -88,4 +88,6 @@ Yanxin Hu, Yun Liu, Shubo Lv, Mengtao Xing, Shimin Zhang, Yihui Fu, Jian Wu, Bih
 
 
 # Paper
-[Performance comparison evaluation of speech enhancement using various loss function.]()
+**Performance comparison evaluation of speech enhancement using various loss function.**
+Seo-Rim Hwang, Joon Byun, Young-Cheul Park
+[[paper]]()
