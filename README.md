@@ -65,7 +65,7 @@ If you want to test the model described in the [paper](), you can change chkpt_m
 <br>
 We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS and SI-SNR + PMSQE.   
 
-# Performance evaluation
+# Performance comparative evaluation
 **Objective evaluation**   
 <br>   
 We evaluate the outputs with PESQ(Perceptual Evaluation of Speech Quality) and STOI(Short Time Objective Intelligibility measure).   
