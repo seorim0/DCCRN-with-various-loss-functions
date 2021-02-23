@@ -1,6 +1,6 @@
 # DCCRN with various loss functions
 
-DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed at [[1]](https://arxiv.org/abs/2008.00264). This repository is an application using DCCRN with various loss functions. Our original paper can be found here, and you can check the test samples here.   
+DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed at [[1]](https://arxiv.org/abs/2008.00264). This repository is an application using DCCRN with various loss functions. Our original paper can be found [here](), and you can check the test samples [here]().   
 <br>   
    
 ![DCCRN_수정최종](https://user-images.githubusercontent.com/55497506/105969652-d39f6b80-60cb-11eb-805c-0f204405ef37.png)
@@ -12,7 +12,7 @@ DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural n
 # Loss functions
 We use two base loss functions and two perceptual loss functions.
 
-> Base
+> Base loss
   1. MSE: Mean Squred Error   
   ![image](https://user-images.githubusercontent.com/55497506/106714015-97758900-663e-11eb-9593-6ecfd4266a41.png)
   <br>
@@ -21,7 +21,7 @@ We use two base loss functions and two perceptual loss functions.
   ![image](https://user-images.githubusercontent.com/55497506/106714206-da376100-663e-11eb-94c6-77f6588616b9.png)
   <br>
 
-> Perceptual
+> Perceptual loss
   1. LMS: Log Mel Spectra   
   ![image](https://user-images.githubusercontent.com/55497506/106714238-e58a8c80-663e-11eb-8601-58bb020a2d3b.png)
   <br>
@@ -30,7 +30,10 @@ We use two base loss functions and two perceptual loss functions.
   ![image](https://user-images.githubusercontent.com/55497506/106714147-c855be00-663e-11eb-8a8d-a9d5aba1325d.png)
   <br>
 
+ > Joint loss
 
+ The coupling constant ratio was determined experimentally.
+ 
 # Requirements
 > This repository is tested on Ubuntu 20.04.
 * Python 3.7+
@@ -43,11 +46,12 @@ We use two base loss functions and two perceptual loss functions.
 * 
 
 # Prepare data
-The training data consists of the following three dimensions.   
+The training and validation data consist of the following three dimensions.   
 ```[Batch size, 2(input & target), wav length]``` 
 <br>
 The test data consists of the following dimensions.   
-```[2(noise type: seen, unseen), dB classes, Batch size, 2(input & target), wav length]```
+```[noise type, dB classes, Batch size, 2(input & target), wav length]```   
+We use 2 type of noise, seen and unseen. And 7 dB classes.
 
 <br>
 We cut the wav files longer than 3 seconds into 3 seconds and zero padded for wav files shorter than 3 seconds.   
