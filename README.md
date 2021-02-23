@@ -32,7 +32,7 @@ We use two base loss functions and two perceptual loss functions.
 
 > Joint loss   
 
-    ![image](https://user-images.githubusercontent.com/55497506/108794425-11a78680-75c9-11eb-902d-223ee6b9de58.png),   
+   ![image](https://user-images.githubusercontent.com/55497506/108794425-11a78680-75c9-11eb-902d-223ee6b9de58.png),   
   <br>   
 
 where Ɣ = Ɣ1 + Ɣ2. The coupling constant ratio(Ɣ1 : Ɣ2) was determined experimentally. In the case of MSE, which is the basic loss function, the initial size is about 0.001 ~ 0.002, whereas the LMS has an initial size of 0.1 ~ 0.2 and PMSQE is about 0.8 ~ 1.3. Therefore, to combine the two terms to be of similar size, a smaller coefficient was used in the perceptual based loss function term. The coupling constant ratio is a result of reflecting the dynamic range of the two terms rather than reflecting the sensitivity of the two terms. Meanwhile, in the course of the experiment, we determined that the basic loss function is a more important term, so we changed the coefficients so that the dynamic range ratio including the coupling constant could be adjusted from 1:1 to 10:1, respectively.   
@@ -67,11 +67,10 @@ If you want to test the model described in the [paper](), you can change chkpt_m
 We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS and SI-SNR + PMSQE.   
 
 # Performance evaluation
-**Objective evaluation**
-> The performance table of various loss functions using seen noise. 
+**Objective evaluation**   
 ![t1](https://user-images.githubusercontent.com/55497506/108797149-e1aeb200-75cd-11eb-8ea4-3db00da21991.png)   
 <br>   
-> The performance table of various loss functions using unseen noise.   
+
 ![t2](https://user-images.githubusercontent.com/55497506/108797168-eb381a00-75cd-11eb-94ba-1d3a1016fb6e.png)   
 <br>   
 
