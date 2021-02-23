@@ -67,6 +67,7 @@ We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS 
 
 # Performance evaluation
 **Objective evaluation**   
+<br>   
 We evaluate the outputs with PESQ(Perceptual Evaluation of Speech Quality) and STOI(Short Time Objective Intelligibility measure).   
 ![t1](https://user-images.githubusercontent.com/55497506/108797149-e1aeb200-75cd-11eb-8ea4-3db00da21991.png)   
 <br>   
@@ -88,6 +89,6 @@ Yanxin Hu, Yun Liu, Shubo Lv, Mengtao Xing, Shimin Zhang, Yihui Fu, Jian Wu, Bih
 
 
 # Paper
-**Performance comparison evaluation of speech enhancement using various loss function.**
-Seo-Rim Hwang, Joon Byun, Young-Cheul Park
+**Performance comparison evaluation of speech enhancement using various loss function.**   
+Seo-Rim Hwang, Joon Byun, Young-Cheul Park   
 [[paper]]()
