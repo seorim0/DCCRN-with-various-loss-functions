@@ -68,6 +68,7 @@ We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS 
 
 # Performance evaluation
 **Objective evaluation**   
+We evaluate the outputs with PESQ() and STOI().
 ![t1](https://user-images.githubusercontent.com/55497506/108797149-e1aeb200-75cd-11eb-8ea4-3db00da21991.png)   
 <br>   
 
