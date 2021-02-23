@@ -67,7 +67,7 @@ We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS 
 
 # Performance evaluation
 **Objective evaluation**   
-We evaluate the outputs with PESQ() and STOI().
+We evaluate the outputs with PESQ(Perceptual Evaluation of Speech Quality) and STOI(Short Time Objective Intelligibility measure).   
 ![t1](https://user-images.githubusercontent.com/55497506/108797149-e1aeb200-75cd-11eb-8ea4-3db00da21991.png)   
 <br>   
 
@@ -75,8 +75,10 @@ We evaluate the outputs with PESQ() and STOI().
 <br>   
 
 **Spectrogram**   
+
 ![image](https://user-images.githubusercontent.com/55497506/108705017-1a0fab00-7550-11eb-962a-9f0b218371a8.png)   
 > Source of the figure: [paper]()   
+
 > The spectrograms of  (a) clean speech, (b) noisy speech at 0 dB SNR, estimated speeches using (c)  MSE and PMSQE, (d)  SI-SNR , (e) SI-SNR and PMSQE, (f)  SI-SNR and LMS.
 
 # References
