@@ -31,6 +31,7 @@ We use two base loss functions and two perceptual loss functions.
   <br>
 
 > Joint loss   
+
 ![image](https://user-images.githubusercontent.com/55497506/108794425-11a78680-75c9-11eb-902d-223ee6b9de58.png),   
   <br>   
 
