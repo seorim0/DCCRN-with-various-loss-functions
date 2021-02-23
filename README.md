@@ -30,10 +30,10 @@ We use two base loss functions and two perceptual loss functions.
   ![image](https://user-images.githubusercontent.com/55497506/106714147-c855be00-663e-11eb-8a8d-a9d5aba1325d.png)
   <br>
 
- > Joint loss
-  ![image](https://user-images.githubusercontent.com/55497506/108794425-11a78680-75c9-11eb-902d-223ee6b9de58.png)   
+ > Joint loss   
+  ![image](https://user-images.githubusercontent.com/55497506/108794425-11a78680-75c9-11eb-902d-223ee6b9de58.png),   
 <br>  
- The coupling constant ratio was determined experimentally. In the case of MSE, which is the basic loss function, the initial size is about 0.001~0.002, whereas the LMS has an initial size of 0.1~0.2 and PMSQE is about 0.8~1.3. Therefore, to combine the two terms to be of similar size, a smaller coefficient was used in the perceptual-based loss function term. The coupling constant ratio is a result of reflecting the dynamic range of the two terms rather than reflecting the sensitivity of the two terms. Meanwhile, in the course of the experiment, we determined that the basic loss function is a more important term, so we changed the coefficients so that the dynamic range ratio including the coupling constant could be adjusted from 1:1 to 10:1, respectively.   
+ where Ɣ = Ɣ1 + Ɣ2 and Ln means base loss, Lp means perceptual loss. The coupling constant ratio was determined experimentally. In the case of MSE, which is the basic loss function, the initial size is about 0.001~0.002, whereas the LMS has an initial size of 0.1~0.2 and PMSQE is about 0.8~1.3. Therefore, to combine the two terms to be of similar size, a smaller coefficient was used in the perceptual-based loss function term. The coupling constant ratio is a result of reflecting the dynamic range of the two terms rather than reflecting the sensitivity of the two terms. Meanwhile, in the course of the experiment, we determined that the basic loss function is a more important term, so we changed the coefficients so that the dynamic range ratio including the coupling constant could be adjusted from 1:1 to 10:1, respectively.   
  <br>
  
 # Requirements
