@@ -31,6 +31,7 @@ We use two base loss functions and two perceptual loss functions.
   <br>
 
 > Joint loss
+  <br>   
   We combined the 2 type of base loss functions(Ln) and 2 type of perceptual loss functions(Lp).   
   ![image](https://user-images.githubusercontent.com/55497506/108794425-11a78680-75c9-11eb-902d-223ee6b9de58.png),
   <br>   
