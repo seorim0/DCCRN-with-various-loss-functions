@@ -51,7 +51,7 @@ The training and validation data consist of the following three dimensions.
 <br>   
 The test data consists of the following dimensions.   
 ```[noise type, dB classes, Batch size, 2(input & target), wav length]```   
-We use 2 type of noise, seen and unseen. ㅁnd 7 dB classes .
+We use 2 type of noise, seen and unseen and 7 dB classes from -10dB to 20dB.
 
 <br>
 We cut the wav files longer than 3 seconds into 3 seconds and zero padded for wav files shorter than 3 seconds.   
