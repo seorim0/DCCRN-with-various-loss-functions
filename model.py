@@ -255,18 +255,15 @@ class DCCRN(nn.Module):
 
     def loss(self, inputs, labels, real_spec, img_spec, loss_mode=cfg.loss_mode):
         if loss_mode == 'MSE':
-            #
             return F.mse_loss(inputs, labels, reduction='mean')
 
         elif loss_mode == 'SDR':
             return -sdr(labels, inputs)
 
         elif loss_mode == 'SI-SNR':
-            # return -torch.mean(si_snr(inputs, labels))
             return -(si_snr(inputs, labels))
 
         elif loss_mode == 'SI-SDR':
-            # return -torch.mean(si_sdr(inputs, labels))
             return -(si_sdr(labels, inputs))
 
         elif loss_mode == 'MSE+LMS':
@@ -398,7 +395,6 @@ class DCCRN(nn.Module):
             ref_spec = transforms.take_mag(pmsqe_stft(ref_wav))
             est_spec = transforms.take_mag(pmsqe_stft(est_wav))
 
-            # p_loss = pmsqe_loss(ref_spec, est_spec) wrong
             p_loss = pmsqe_loss(est_spec, ref_spec)
 
             snr_loss = -(si_snr(est_wav, ref_wav))
