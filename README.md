@@ -1,10 +1,10 @@
 # DCCRN with various loss functions
 
-DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed at [[1]](https://arxiv.org/abs/2008.00264). This repository is an application using DCCRN with various loss functions. Our original paper can be found [here](), and you can check the test samples [here]().   
+DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed at [[1]](https://arxiv.org/abs/2008.00264). This repository is an application using DCCRN with various loss functions. Our original paper can be found [here](https://www.jask.or.kr/articles/xml/ABxn/), and you can check the test samples [here]().   
 <br>   
    
 ![DCCRN_수정최종](https://user-images.githubusercontent.com/55497506/105969652-d39f6b80-60cb-11eb-805c-0f204405ef37.png)
-> Source of the figure: [paper]()   
+> Source of the figure: [paper](https://www.jask.or.kr/articles/xml/ABxn/)   
 <br>
 
 
@@ -60,10 +60,10 @@ We use 2 type of noise, seen and unseen and 7 dB classes from -10dB to 20dB.
 We cut the wav files longer than 3 seconds into 3 seconds and zero padded for wav files shorter than 3 seconds.   
 The sampling frequency is 16k.
 
-# Use pretrained models
+<!--# Use pretrained models
 If you want to test the model described in the [paper](), you can change chkpt_model path in ```config.py``` like ```'SI-SNR/'```  
 <br>
-We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS and SI-SNR + PMSQE.   
+We have uploaded 3 models trained with each loss function, SI-SNR, SI-SNR + LMS and SI-SNR + PMSQE.-->   
 
 # Performance comparative evaluation
 **Objective evaluation**   
@@ -91,4 +91,4 @@ Yanxin Hu, Yun Liu, Shubo Lv, Mengtao Xing, Shimin Zhang, Yihui Fu, Jian Wu, Bih
 # Paper
 **Performance comparison evaluation of speech enhancement using various loss function.**   
 Seo-Rim Hwang, Joon Byun, Young-Cheul Park   
-[[paper]]()
+[[paper]](https://www.jask.or.kr/articles/xml/ABxn/)
