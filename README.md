@@ -1,6 +1,6 @@
 # DCCRN with various loss functions
 
-DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed at [[1]](https://arxiv.org/abs/2008.00264). This repository is an application using DCCRN with various loss functions. Our original paper can be found [here](https://www.jask.or.kr/articles/xml/ABxn/), and you can check the test samples [here]().   
+DCCRN(Deep Complex Convolutional Recurrent Network) is one of the deep neaural networks proposed at [[1]](https://arxiv.org/abs/2008.00264). This repository is an application using DCCRN with various loss functions. Our original paper can be found [here](https://www.jask.or.kr/articles/xml/ABxn/), and you can check test samples [here](https://github.com/seorim0/DCCRN-with-various-loss-functions/tree/main/samples/0dB). Test samples are randomly choosed and we uploaded samples about SI-SNR and SI-SNR+LMS.    
 <br>   
    
 ![DCCRN_수정최종](https://user-images.githubusercontent.com/55497506/105969652-d39f6b80-60cb-11eb-805c-0f204405ef37.png)
