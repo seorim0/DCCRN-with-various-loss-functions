@@ -9,6 +9,9 @@ from write_on_tensorboard import Writer
 from dataloader import create_dataloader
 from tester import model_test
 
+np_load_old = np.load
+np.load = lambda *a, **k: np_load_old(*a, allow_pickle=True, **k)
+
 
 ###############################################################################
 #                        Helper function definition                           #
