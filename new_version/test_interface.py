@@ -138,11 +138,11 @@ for type in range(len(noise_type)):
         noisy_cvol = data_info[type][snr][4]
 
         print('Noise type {} | SNR {}'.format(noise_type[type], noisy_snr[snr]))
-        fp.write('\n\nNoise type {} | SNR {}'.format(noise_type[type], noisy_snr[snr]))
+        fp.write('\n\nNoise type {} | SNR {}\n'.format(noise_type[type], noisy_snr[snr]))
         print('Test loss {:.6} | PESQ: REF {:.6} EST {:.6} | REF {:.6} EST STOI {:.6}'
               .format(noisy_pesq, test_pesq, noisy_stoi, test_stoi))
         print('REF CSIG {:.6f} | CBAK {:.6f} | COVL {:.6f}'.format(noisy_csig, noisy_cbak, noisy_cvol))
         print('    CSIG {:.6f} | CBAK {:.6f} | COVL {:.6f}'.format(test_csig, test_cbak, test_cvol))
-        fp.write('Test loss {:.6f} | PESQ: REF {:.6} EST {:.6} | REF {:.6} EST STOI {:.6f}'
+        fp.write('Test loss {:.6f} | PESQ: REF {:.6} EST {:.6} | REF {:.6} EST STOI {:.6f}\n'
                  .format(noisy_pesq, test_pesq, noisy_stoi, test_stoi))
 
