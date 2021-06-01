@@ -185,6 +185,8 @@ def melFilterBank(numCoeffs, fftSize=None):
 # ====================================================================
 #  Finally: a perceptual loss function (based on Mel scale)
 # ====================================================================
+# Set device
+DEVICE = torch.device('cuda')
 
 FFT_SIZE = cfg.fft_len
 
