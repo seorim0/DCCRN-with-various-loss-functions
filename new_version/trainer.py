@@ -30,9 +30,9 @@ def model_train(model, optimizer, train_loader, direct, DEVICE):
             inputs = inputs.float().to(DEVICE)
             targets = targets.float().to(DEVICE)
 
-            outspec, outputs = model(inputs, direct_mapping=direct)
+            real_spec, img_spec, outputs = model(inputs, direct_mapping=direct)
             main_loss = model.loss(outputs, targets)
-            perceptual_loss = model.loss(outputs, targets, outspec, perceptual=True)
+            perceptual_loss = model.loss(outputs, targets, real_spec, img_spec, perceptual=True)
 
             # the constraint ratio
             r1 = 1
@@ -60,7 +60,7 @@ def model_train(model, optimizer, train_loader, direct, DEVICE):
             inputs = inputs.float().to(DEVICE)
             targets = targets.float().to(DEVICE)
 
-            _, outputs = model(inputs, direct_mapping=direct)
+            _, _, outputs = model(inputs, direct_mapping=direct)
 
             loss = model.loss(outputs, targets)
             # # if you want to check the scale of the loss
@@ -103,9 +103,9 @@ def model_validate(model, validation_loader, direct, writer, epoch, DEVICE):
                 inputs = inputs.float().to(DEVICE)
                 targets = targets.float().to(DEVICE)
 
-                outspec, outputs = model(inputs, direct_mapping=direct)
+                real_spec, img_spec, outputs = model(inputs, direct_mapping=direct)
                 main_loss = model.loss(outputs, targets)
-                perceptual_loss = model.loss(outputs, targets, outspec, perceptual=True)
+                perceptual_loss = model.loss(outputs, targets, real_spec, img_spec, perceptual=True)
 
                 # the constraint ratio
                 r1 = 1
@@ -142,7 +142,7 @@ def model_validate(model, validation_loader, direct, writer, epoch, DEVICE):
                 inputs = inputs.float().to(DEVICE)
                 targets = targets.float().to(DEVICE)
 
-                _, outputs = model(inputs, direct_mapping=direct)
+                _, _, outputs = model(inputs, direct_mapping=direct)
                 loss = model.loss(outputs, targets)
 
                 validation_loss += loss
@@ -186,7 +186,7 @@ def model_eval(model, validation_loader, direct, dir_to_save, epoch, DEVICE):
             inputs = inputs.float().to(DEVICE)
             targets = targets.float().to(DEVICE)
 
-            _, outputs = model(inputs, direct_mapping=direct)
+            _, _, outputs = model(inputs, direct_mapping=direct)
 
             # estimate the output speech with pesq and stoi
             estimated_wavs = outputs.cpu().detach().numpy()
