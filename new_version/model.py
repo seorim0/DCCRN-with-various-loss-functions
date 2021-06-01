@@ -230,7 +230,7 @@ class complex_model(nn.Module):
         out_wav = torch.squeeze(out_wav, 1)
         out_wav = torch.clamp_(out_wav, -1, 1)
 
-        return out_spec, out_wav
+        return real, imag, out_wav
 
     def get_params(self, weight_decay=0.0):
         # add L2 penalty
