@@ -33,7 +33,7 @@ def model_test(model, validation_loader, noise_type, snr, direct, dir_to_save, e
         inputs = inputs.float().to(DEVICE)
         targets = targets.float().to(DEVICE)
 
-        outputs = model(inputs, direct_mapping=direct)
+        _, _, outputs = model(inputs, direct_mapping=direct)
 
         # estimate the output speech with pesq and stoi
         estimated_wavs = outputs.cpu().detach().numpy()
