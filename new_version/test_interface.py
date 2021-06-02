@@ -47,11 +47,19 @@ def calculate_total_params(our_model):
 # Set device
 DEVICE = torch.device('cuda')
 
-# Set model
-model = complex_model()
-# Set optimizer and learning rate
-optimizer = torch.optim.Adam(model.parameters(), lr=cfg.learning_rate)
-total_params = calculate_total_params(model)
+if cfg.cycle:
+    # Set model
+    N2C = complex_model()
+    C2N = complex_model()
+    # Set optimizer and learning rate
+    optimizer = torch.optim.Adam(itertools.chain(N2C.parameters(), C2N.parameters()), lr=cfg.learning_rate)
+    total_params = calculate_total_params(N2C) + calculate_total_params(C2N)
+else:
+    # Set model
+    model = complex_model()
+    # Set optimizer and learning rate
+    optimizer = torch.optim.Adam(model.parameters(), lr=cfg.learning_rate)
+    total_params = calculate_total_params(model)
 
 if cfg.masking_mode == 'Direct(None make)':
     direct = True
@@ -86,11 +94,18 @@ if cfg.chkpt_model is not None:  # Load the checkpoint
     dir_to_save = cfg.job_dir + cfg.chkpt_model
     dir_to_logs = cfg.logs_dir + cfg.chkpt_model
 
-    
-    checkpoint = torch.load(cfg.chkpt_path)
-    model.load_state_dict(checkpoint['model'])
-    optimizer.load_state_dict(checkpoint['optimizer'])
-    epoch_start_idx = checkpoint['epoch'] + 1
+    if cfg.cycle:
+        N2C_checkpoint = torch.load(dir_to_save + 'N2C_chkpt_' + cfg.chkpt + '.pt')
+        N2C.load_state_dict(N2C_checkpoint['model'])
+        optimizer.load_state_dict(N2C_checkpoint['optimizer'])
+        epoch_start_idx = N2C_checkpoint['epoch'] + 1
+
+        model = N2C
+    else:
+        checkpoint = torch.load(cfg.chkpt_path)
+        model.load_state_dict(checkpoint['model'])
+        optimizer.load_state_dict(checkpoint['optimizer'])
+        epoch_start_idx = checkpoint['epoch'] + 1
     mse_vali_total = np.load(str(dir_to_save + '/mse_vali_total.npy'))
     # if the loaded length is shorter than I expected, extend the length
     if len(mse_vali_total) < cfg.max_epochs:
@@ -124,14 +139,14 @@ noise_type = ['seen', 'unseen']
 noisy_snr = ['0', '5', '10', '15', '20']
 
 # Road the dataset information to compare
-data_info = np.load('./input/C1_dataset_info.npy')
+data_info = np.load('C1_dataset_info.npy')
 
 for type in range(len(noise_type)):
     for snr in range(len(noisy_snr)):
 
         test_loader = create_dataloader(mode='test', type=type, snr=snr)
         test_pesq, test_stoi, test_csig, test_cbak, test_cvol = model_test(
-            model, test_loader, noise_type[type], noisy_snr[snr], dir_to_save, direct, DEVICE)
+            model, test_loader, noise_type[type], noisy_snr[snr], dir_to_save, direct, cfg.chkpt, DEVICE)
 
         # Road the score to compare
         noisy_pesq = data_info[type][snr][0]
@@ -141,11 +156,11 @@ for type in range(len(noise_type)):
         noisy_cvol = data_info[type][snr][4]
 
         print('Noise type {} | SNR {}'.format(noise_type[type], noisy_snr[snr]))
-        fp.write('\n\nNoise type {} | SNR {}\n'.format(noise_type[type], noisy_snr[snr]))
+        fp.write('\n\nNoise type {} | SNR {}'.format(noise_type[type], noisy_snr[snr]))
         print('Test loss {:.6} | PESQ: REF {:.6} EST {:.6} | REF {:.6} EST STOI {:.6}'
               .format(noisy_pesq, test_pesq, noisy_stoi, test_stoi))
         print('REF CSIG {:.6f} | CBAK {:.6f} | COVL {:.6f}'.format(noisy_csig, noisy_cbak, noisy_cvol))
         print('    CSIG {:.6f} | CBAK {:.6f} | COVL {:.6f}'.format(test_csig, test_cbak, test_cvol))
-        fp.write('Test loss {:.6f} | PESQ: REF {:.6} EST {:.6} | REF {:.6} EST STOI {:.6f}\n'
+        fp.write('Test loss {:.6f} | PESQ: REF {:.6} EST {:.6} | REF {:.6} EST STOI {:.6f}'
                  .format(noisy_pesq, test_pesq, noisy_stoi, test_stoi))
 
