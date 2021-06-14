@@ -92,7 +92,7 @@ Yanxin Hu, Yun Liu, Shubo Lv, Mengtao Xing, Shimin Zhang, Yihui Fu, Jian Wu, Bih
 **Performance comparison evaluation of speech enhancement using various loss function.**   
 Seo-Rim Hwang, Joon Byun, Young-Cheul Park   
 [[paper]](https://www.jask.or.kr/articles/xml/ABxn/)   
-
-
+   
+   
 * New version is my new clean-up code. I'm trying to the codes more clearly.   
 * It's still in the editing phase. Please refer to the existing code. 
