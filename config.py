@@ -4,16 +4,16 @@ Configuration for program
 
 # model
 mode = 'DCCRN'  # DCUNET / DCCRN
-info = 'SDR+PMSQE'
+info = 'MODEL INFORMATION : IT IS USED FOR FILE NAME'
 
 test = True
 
 # path
 job_dir = './job/'
 logs_dir = './logs/'
-chkpt_model = '2.17_DCCRN_SDR+PMSQE/'
-chkpt_path = job_dir + chkpt_model + 'chkpt_88.pt'
-#chkpt_path = None
+chkpt_path = None
+# chkpt_model = 'FILE NAME THAT YOU WANT TO LOAD'
+# chkpt_path = job_dir + chkpt_model + 'chkpt_88.pt'
 
 # model information
 fs = 16000
