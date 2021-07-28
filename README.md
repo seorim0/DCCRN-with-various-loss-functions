@@ -95,5 +95,5 @@ Seo-Rim Hwang, Joon Byun, Young-Cheul Park
    
    
 # Note   
-* New version is my new clean-up code. I'm trying to the codes more clearly.   
+* I'm trying to the codes more clearly.   
 * It's still in the editing phase. Please refer to the existing code. 
