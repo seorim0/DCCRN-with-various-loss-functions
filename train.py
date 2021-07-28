@@ -23,12 +23,8 @@ def model_train(model, optimizer, train_loader, epoch, DEVICE):
         inputs = inputs.float().to(DEVICE)
         labels = labels.float().to(DEVICE)
 
-        if mode == 'DCCRN_direct':
-            real, imag, outputs = model(inputs)
-            loss = model.loss(real, imag, outputs, labels)
-        else:
-            _, _, real_spec, img_spec, outputs = model(inputs)
-            loss = model.loss(outputs, labels, real_spec, img_spec)
+        _, _, real_spec, img_spec, outputs = model(inputs)
+        loss = model.loss(outputs, labels, real_spec, img_spec)
         # loss = model.pmsqe_loss(labels, outputs)
 
         optimizer.zero_grad()
@@ -68,12 +64,8 @@ def model_validate(model, validation_loader, dir_to_save, writer, epoch, DEVICE)
             inputs = inputs.float().to(DEVICE)
             labels = labels.float().to(DEVICE)
 
-            if mode == 'DCCRN_direct':
-                real, imag, outputs = model(inputs)
-                loss = model.loss(real, imag, outputs, labels)
-            else:
-                mask_real, mask_imag, real_spec, img_spec, outputs = model(inputs)
-                loss = model.loss(outputs, labels, real_spec, img_spec)
+            mask_real, mask_imag, real_spec, img_spec, outputs = model(inputs)
+            loss = model.loss(outputs, labels, real_spec, img_spec)
 
             # loss = model.pmsqe_loss(labels, outputs)
 
@@ -187,12 +179,8 @@ def model_test(noise_type, snr, model, test_loader, dir_to_save, DEVICE):
             inputs = inputs.float().to(DEVICE)
             labels = labels.float().to(DEVICE)
 
-            if mode == 'DCCRN_direct':
-                real, imag, outputs = model(inputs)
-                loss = model.loss(real, imag, outputs, labels)
-            else:
-                mask_real, mask_imag, real_spec, img_spec, outputs = model(inputs)
-                loss = model.loss(outputs, labels, real_spec, img_spec)
+            mask_real, mask_imag, real_spec, img_spec, outputs = model(inputs)
+            loss = model.loss(outputs, labels, real_spec, img_spec)
             # loss = model.pmsqe_loss(labels, outputs)
             # estimate the output speech with pesq and stoi
             # save pesq & stoi score at each epoch
