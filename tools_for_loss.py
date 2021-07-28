@@ -108,9 +108,10 @@ class rmse(torch.nn.Module):
         return torch.mean(rmse)
 
 
-# ====================================================================
-#  MFCC (Mel Frequency Cepstral Coefficients)
-# ====================================================================
+
+############################################################################
+#                MFCC (Mel Frequency Cepstral Coefficients)                #
+############################################################################
 
 # based on a combination of this article:
 #     http://practicalcryptography.com/miscellaneous/machine-learning/...
@@ -176,9 +177,10 @@ def melFilterBank(numCoeffs, fftSize=None):
     return filterMat
 
 
-# ====================================================================
-#  Finally: a perceptual loss function (based on Mel scale)
-# ====================================================================
+
+############################################################################
+#      Finally: a perceptual loss function (based on Mel scale)            #
+############################################################################
 
 FFT_SIZE = cfg.fft_len
 
