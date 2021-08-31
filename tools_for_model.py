@@ -579,17 +579,6 @@ def get_statistics_inp(inp):
     return mu_inp, sig_inp
 
 
-# normalize [-1 1]
-def normalize_dataset(dataset):
-    for i in range(len(dataset)):
-        noisy_max = np.max(abs(dataset[i][0]))
-        dataset[i][0] = dataset[i][0] / noisy_max
-
-        clean_max = np.max(abs(dataset[i][1]))
-        dataset[i][1] = dataset[i][1] / clean_max
-    return dataset
-
-
 ############################################################################
 #                       for plotting the samples                           #
 ############################################################################
