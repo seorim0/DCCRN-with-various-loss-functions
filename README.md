@@ -97,4 +97,4 @@ Seo-Rim Hwang, Joon Byun, Young-Cheul Park
 # Note   
 * ~~I'm trying to the codes more clearly.~~
 * ~~It's still in the editing phase. Please refer to the existing code.~~
-* cleanup code(https://github.com/seorim0/Speech_enhancement_with_Pytorch)
+* [cleanup code](https://github.com/seorim0/Speech_enhancement_with_Pytorch)
