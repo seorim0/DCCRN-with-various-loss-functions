@@ -115,29 +115,17 @@ def model_validate(model, validation_loader, dir_to_save, writer, epoch, DEVICE)
             # the best pesq
             writer.save_samples_we_want('max_pesq', all_batch_input[max_pesq_index], all_batch_label[max_pesq_index],
                                              all_batch_output[max_pesq_index], epoch)
-            writer.log_data_we_want('max_pesq', all_batch_input[max_pesq_index], all_batch_label[max_pesq_index],
-                                        all_batch_output[max_pesq_index], all_batch_real_spec[max_pesq_index],
-                                    all_batch_img_spec[max_pesq_index], epoch)
             # the worst pesq
             writer.save_samples_we_want('min_pesq', all_batch_input[min_pesq_index], all_batch_label[min_pesq_index],
                                              all_batch_output[min_pesq_index], epoch)
-            writer.log_data_we_want('min_pesq', all_batch_input[min_pesq_index], all_batch_label[min_pesq_index],
-                                        all_batch_output[min_pesq_index], all_batch_real_spec[min_pesq_index],
-                                    all_batch_img_spec[min_pesq_index], epoch)
             # the avg pesq
             writer.save_samples_we_want('avg_pesq', all_batch_input[avg_pesq_index], all_batch_label[avg_pesq_index],
                                              all_batch_output[avg_pesq_index], epoch)
-            writer.log_data_we_want('avg_pesq', all_batch_input[avg_pesq_index], all_batch_label[avg_pesq_index],
-                                        all_batch_output[avg_pesq_index], all_batch_real_spec[avg_pesq_index],
-                                    all_batch_img_spec[avg_pesq_index], epoch)
 
             # save the same sample
             clip_num = 10
-            writer.save_samples_we_want('same_sample', all_batch_input[clip_num], all_batch_label[clip_num],
+            writer.save_samples_we_want('n{}_sample'.format(clip_num), all_batch_input[clip_num], all_batch_label[clip_num],
                                         all_batch_output[clip_num], epoch)
-            writer.log_data_we_want('same_sample', all_batch_input[clip_num], all_batch_label[clip_num],
-                                    all_batch_output[clip_num], all_batch_real_spec[clip_num],
-                                    all_batch_img_spec[clip_num], epoch)
 
         validation_loss /= batch_num
         avg_pesq /= batch_num
