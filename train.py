@@ -2,10 +2,9 @@
 Run the trainer and tester
 """
 import torch
-from estimate import run_pesq_waveforms_array, cal_stoi
 import numpy as np
 from scipy.io.wavfile import write as wav_write
-from tools_for_model import near_avg_index, max_index, min_index, Bar
+from tools_for_model import near_avg_index, max_index, min_index, Bar, cal_pesq, cal_stoi
 from config import fs, info, mode
 
 
@@ -74,7 +73,7 @@ def model_validate(model, validation_loader, dir_to_save, writer, epoch, DEVICE)
             estimated_wavs = outputs.cpu().detach().numpy()
             clean_wavs = labels.cpu().detach().numpy()
 
-            pesq = run_pesq_waveforms_array(estimated_wavs, clean_wavs)  ## 98
+            pesq = cal_pesq(estimated_wavs, clean_wavs)  ## 98
             stoi = cal_stoi(estimated_wavs, clean_wavs)
 
             # pesq: 0.1 better / stoi: 0.01 better
@@ -176,7 +175,7 @@ def model_test(noise_type, snr, model, test_loader, dir_to_save, DEVICE):
             estimated_wavs = outputs.cpu().detach().numpy()
             clean_wavs = labels.cpu().detach().numpy()
 
-            pesq = run_pesq_waveforms_array(estimated_wavs, clean_wavs)
+            pesq = cal_pesq(estimated_wavs, clean_wavs)
             stoi = cal_stoi(estimated_wavs, clean_wavs)
 
             # # pesq: 0.1 better / stoi: 0.01 better
