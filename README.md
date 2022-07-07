@@ -47,6 +47,8 @@ We combined 2 types of base loss functons and 2 types of perceptual loss functio
 * scipy
 * matplotlib
 * tensorboardX
+* pesq
+* pystoi
 
 # Prepare data
 The training and validation data consist of the following three dimensions.   
