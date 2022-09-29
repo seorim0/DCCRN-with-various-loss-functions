@@ -8,7 +8,7 @@ import torch
 import shutil
 import numpy as np
 import config as cfg
-from run import model_train, model_validate, model_test
+from train import model_train, model_validate, model_test
 from dataloader import create_dataloader, create_dataloader_for_test
 from model import DCCRN, DCUNET, DCCRN_direct, DCCRN_no_skip
 from write_on_tensorboard import Writer
